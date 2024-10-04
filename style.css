@@ -1,0 +1,232 @@
+/* General styles for icons */
+.nav-link {
+    color: #ffffff; /* White color for text */
+    text-align: center;
+    transition: color 0.3s, background-color 0.3s; /* Smooth transition effect */
+}
+
+.nav-link i {
+    font-size: 24px; 
+    transition: transform 0.3s; 
+}
+
+.nav-link:hover {
+    color: #f8f9fa; 
+    background-color: #007bff;
+    border-radius: 5px; 
+}
+
+.nav-link:hover i {
+    transform: scale(1.2);
+}
+
+.nav-link.active {
+    color: #007bff; 
+    background-color: #e9ecef;
+    border-radius: 5px; 
+}
+
+.nav-link i {
+    color: #ffffff; /* Default icon color */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.nav-link:hover i {
+    color: #f8f9fa; /* Lighter icon color on hover */
+}
+
+/* General Header Styles */
+header {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient background */
+    color: #fff; /* Default text color */
+    padding: 15px 0;
+}
+
+/* Header Title Styles */
+header .d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .d-flex a {
+    text-decoration: none;
+    color: #fff; /* White text for the title */
+}
+
+header .d-flex a i {
+    color: #ffd700; /* Gold color for the icon */
+}
+
+header .d-flex a span {
+    font-weight: bold; /* Bold text for the title */
+    font-size: 2em;
+}
+
+/* Navigation Menu Styles */
+.nav-link {
+    color: #000; /* Black text color for navigation links */
+    font-weight: bold; /* Bold text for navigation links */
+}
+
+.nav-link i {
+    color: #fff; 
+    background-color: #007bff; 
+    border-radius: 50%;
+    padding: 10px; 
+}
+
+
+.nav-link:hover {
+    color: #007bff; 
+}
+
+.nav-link:hover i {
+    background-color: #fff; 
+    color: #007bff; 
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header .d-flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .nav {
+        margin-top: 10px;
+    }
+}
+/* Style for success message after printing bill */
+#billMessage {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 16px;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+#billMessage button {
+    margin-left: 15px;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.thead-dark th {
+    background-color: #343a4000;
+    color: white;
+}
+
+.table-bordered {
+    border: 1px solid #dee2e6;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 3px solid #dee2e6;
+    padding: 10px;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.column-green {
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+}
+
+/* Style the entire table rows with white background */
+table.table-bordered tbody tr {
+    background-color: white;
+}
+.dashboard {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #433b55;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #546a80;
+    color: white;
+}
+
+.summary {
+    background-color: #227c92;
+    padding: 15px;
+    border-radius: 5px;
+}
+.dashboard-section {
+    margin: 20px 0;
+    padding: 15px;
+    border: 3px solid #88d44a;
+    border-radius: 8px;
+    background-color: #a7cdc151;
+}
+
+.chart-container {
+    margin: 20px 0;
+    padding: 15px;
+    border: 3px solid #53e553;
+    border-radius: 8px;
+    background-color: #afa2ad00;
+}
+
+h2, h3 {
+    color: #3b87e4;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    padding: 5px 0;
+}
