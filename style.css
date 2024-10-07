@@ -12,7 +12,7 @@
 
 .nav-link:hover {
     color: #f8f9fa; 
-    background-color: #007bff;
+    background-color: #225892;
     border-radius: 5px; 
 }
 
@@ -21,7 +21,7 @@
 }
 
 .nav-link.active {
-    color: #007bff; 
+    color: #4276ae; 
     background-color: #e9ecef;
     border-radius: 5px; 
 }
@@ -55,7 +55,7 @@ header .d-flex a {
 }
 
 header .d-flex a i {
-    color: #ffd700; /* Gold color for the icon */
+    color: #9b39c2; /* Gold color for the icon */
 }
 
 header .d-flex a span {
@@ -71,19 +71,19 @@ header .d-flex a span {
 
 .nav-link i {
     color: #fff; 
-    background-color: #007bff; 
+    background-color: #6db51c; 
     border-radius: 50%;
     padding: 10px; 
 }
 
 
 .nav-link:hover {
-    color: #007bff; 
+    color: #7b575e; 
 }
 
 .nav-link:hover i {
     background-color: #fff; 
-    color: #007bff; 
+    color: #924181; 
 }
 
 /* Responsive Adjustments */
