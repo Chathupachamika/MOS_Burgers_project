@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOS Burgers-Place Order</title>
+    <link rel="icon" href="../assets/images/favicon.png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/place-order.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+</head>
+
+<body>
+    <div class="container ">
+        <header class="header d-flex flex-wrap justify-content-center py-3 mb-4 mt-3">
+            <a href="../index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
+                <span class="logo fw-bold fs-4">MOS Burgers</span>
+            </a>
+
+            <nav class="navbar d-flex">
+                <a href="../index.html" class="nav-link d-flex align-items-center me-4">
+                    <img src="../assets/icons/home.png" alt="Home" width="24" height="24" class="me-1">
+                    <span>Home</span>
+                </a>
+                <a href="menu.html" class="nav-link d-flex align-items-center me-4">
+                    <img src="../assets/icons/menu.png" alt="Menu" width="24" height="24" class="me-1">
+                    <span>Menu</span>
+                </a>
+                <a href="orders.html" class="nav-link d-flex align-items-center me-4">
+                    <img src="../assets/icons/order.png" alt="Orders" width="24" height="24" class="me-1">
+                    <span>Orders</span>
+                </a>
+                <a href="reports.html" class="nav-link d-flex align-items-center">
+                    <img src="../assets/icons/report.png" alt="Reports" width="24" height="24" class="me-1">
+                    <span>Reports</span>
+                </a>
+            </nav>
+        </header>
+    </div>
+
+    <div class="modal fade" id="modalAddCustomer" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Add New Customer</h5>
+                    <button type="reset" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="customerForm">
+                        <div class="row mb-4">
+                            <div class="col">
+                                <div class="form-outline" data-mdb-input-init>
+                                    <label class="form-label" for="modalFirstName">First name *</label>
+                                    <input type="text" id="modalFirstName" class="form-control"
+                                        placeholder="John" />
+
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-outline" data-mdb-input-init>
+                                    <label class="form-label" for="modalLastName">Last name *</label>
+                                    <input type="text" id="modalLastName" class="form-control"
+                                        placeholder="Smith" />
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Text input -->
+                        <div class="row mb-4">
+                            <div class="col">
+                                <div class="form-outline" data-mdb-input-init>
+                                    <label class="form-label" for="modalOccupation">Occupation</label>
+                                    <input type="text" id="modalOccupation" class="form-control"
+                                        placeholder="Software Engineer" />
+
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-outline" data-mdb-input-init>
+                                    <label class="form-label" for="modalGender">Gender</label>
+                                    <select id="modalGender" class="form-control">
+                                        <option value="Option">Select Gender</option>
+                                        <option value="Option">Male</option>
+                                        <option value="Option">Female</option>
+                                        <option value="Option">Other</option>
+                                    </select>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Text input -->
+                        <div class="form-outline mb-4" data-mdb-input-init>
+                            <label class="form-label" for="modalLocation">Location *</label>
+                            <input type="text" id="modalLocation" class="form-control" placeholder="Sri Lanka" />
+
+                        </div>
+
+                        <!-- Email input -->
+                        <div class="form-outline mb-4" data-mdb-input-init>
+                            <label class="form-label" for="modalEmail">Email</label>
+                            <input type="email" id="modalEmail" class="form-control"
+                                placeholder="example@email.com" />
+
+                        </div>
+
+                        <!-- Number input -->
+                        <div class="form-outline mb-4" data-mdb-input-init>
+                            <label class="form-label" for="ModalPhoneNumber">Phone Number *</label>
+                            <input type="text" id="modalPhoneNumber" class="form-control"
+                                placeholder="0771234567" />
+
+                        </div>
+
+                        <!-- Additional Infomation input -->
+                        <div class="form-outline mb-4" data-mdb-input-init>
+                            <label class="form-label" for="modalAdditionalInfomation">Additional information</label>
+                            <textarea class="form-control" id="modalAdditionalInfomation" rows="4"
+                                placeholder="Additional information"></textarea>
+
+                        </div>
+
+                        <!-- Submit button -->
+                        <div class="d-flex justify-content-end">
+                            <button type="reset" id="btnClear" class="btn btn-danger me-2" data-mdb-ripple-init ">Clear</button>
+                        <button type=" submit" id="btnAddCustomerSubmit" class="btn btn-success addButton">Add
+                                Customer</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal Cart -->
+    <div class="modal fade right" id="modalCart" tabindex="-1" aria-labelledby="modalCartLabel" aria-hidden="true">
+        <div class="modal-dialog modal-side modal-top-right">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="modalCartLabel">Product in the cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-3 text-center">
+                            <img src="../assets/icons/cart.png" alt="">
+                        </div>
+
+                        <div class="col-9">
+                            <p>Do you need more time to make a purchase decision?</p>
+                        </div>
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Product name</th>
+                                <th>Price LKR</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Classic Chicken Burger</td>
+                                <td>1500.00</td>
+                                <td>
+                                    <a href="#!">
+                                        <img src="../assets/icons/trash.svg" alt="">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Submarine</td>
+                                <td>960.00</td>
+                                <td>
+                                    <a href="#!">
+                                        <img src="../assets/icons/trash.svg" alt="">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Coca Cola (330ml)</td>
+                                <td>1200.00</td>
+                                <td>
+                                    <a href="#!">
+                                        <img src="../assets/icons/trash.svg" alt="">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Chicken Fries</td>
+                                <td>1350.00</td>
+                                <td>
+                                    <a href="#!">
+                                        <img src="../assets/icons/trash.svg" alt="">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="total">
+                                <th scope="row"></th>
+                                <td class="fw-bold">Total</td>
+                                <td>5870.00</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <h3 class="implemented-future">>This will be implemented in the next version!</h3>
+                    <button type="button" class="btn btn-outline-success" data-mdb-ripple-init data-mdb-dismiss="modal">
+                        Close
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Order Management-->
+    <div class="container mt-4">
+        <div class="row flex-lg-row-reverse  g-5 pt-5">
+            <div class="col-lg-5 col-md-12 col-sm-12">
+                <div class="card p-2 mt-5">
+                    <div class="container">
+                        <form class="place-order-form">
+                            <div class="form-group d-flex justify-content-between m-2">
+                                <div>
+                                    <label for="orderID">Order ID #</label>
+                                    <span id="orderID" class="fw-bold">B001</span>
+                                    <label id="DateandTime">27/07/2024 12:21 AM</label>
+                                </div>
+                                <div class="m-2">
+                                    <button type="button" id="btnAddCustomer"">
+                                <svg xmlns=" http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                        class="bi bi-person-fill-add" viewBox="0 0 16 16">
+                                        <path
+                                            d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                        <path
+                                            d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control" id="place_order_phoneNumber"
+                                    placeholder="Search by Phone Number">
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control" id="place_order_customerName"
+                                    placeholder="Customer Name" readonly>
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control" id="place_order_location" placeholder="Location"
+                                    readonly>
+                            </div>
+                            <div class="form-group mb-3">
+                                <div class="m-2 d-flex justify-content-between total-items">
+                                    <p>Total items: <span id="total-items">0</span></p>
+                                    <button class="btn btn-link text-danger mb-2" id="btnClearAll">Clear all</button>
+                                </div>
+                                <div class="order-list" id="order-list">
+                                    <!-- Order items will be dynamically inserted here -->
+                                </div>
+
+
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control" id="additionalNotes"
+                                    placeholder="Additional Notes">
+                            </div>
+                            <div class="form-group m-2 d-flex justify-content-between">
+
+                                <button type="button" class="cart-button" id="btnCart">
+                                    <h5 class="fw-bold"><img src="../assets/icons/cart.png" alt="Go To cart"
+                                            class="cart-image">Cart</h5>
+                                </button>
+
+                                <div class="d-flex justify-content-between">
+                                    <div class="mt-3 prices-list">
+                                        <h5 class="total-price">Price: <span id="total"></span>
+                                        </h5>
+                                        <p class="sub-total mb-0">Sub Total: <span id="subtotal"> </span></p>
+                                        <p class="discount-price">Discount : <span id="lblDiscount"> </span></p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-group m-2 d-flex justify-content-end">
+                                <button type="reset" class="btn btn-danger p-3 m-1 btnClear"
+                                    id="btnClear">Clear</button>
+                                <button type="submit" class="btn btn-primary p-3 m-1 btnPlaceOrder"
+                                    id="btnPlaceOrder">Place Order</button>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7 col-md-12 col-sm-12">
+                <div class="row">
+                    <h2 class="col-lg-6 col-md-12 col-sm-12 fw-semibold mb-3">Categories</h2>
+                    <div class="col-lg-6 col-md-12 col-sm-12 mb-sm-3 text-center">
+                        <input type="text" id="search-bar" placeholder="Search products..." oninput="searchProducts()" />
+                    </div>
+                </div>
+
+                <div class="d-flex flex-wrap mb-3 justify-content-around" id="category-list">
+                    <div class="category-card me-2 mb-2" id="burgers">
+                        <img src="../assets/images/burger.png" alt="Burgers">
+                        <p>Burgers</p>
+                    </div>
+                    <div class="category-card me-2 mb-2" id="pasta">
+                        <img src="../assets/images/Pasta-Category/categoryImage.png" alt="Pasta">
+                        <p>Pasta</p>
+                    </div>
+                    <div class="category-card me-2 mb-2" id="submarine">
+                        <img src="../assets/images/Submarine-Category/Double Cheese Chicken Submarine.webp" alt="">
+                        <p>Submarine</p>
+                    </div>
+                    <div class="category-card me-2 mb-2" id="fries">
+                        <img src="../assets/images/Fries-Category/Sweet Potato Fries.webp" alt="">
+                        <p>Fries</p>
+                    </div>
+                    <div class="category-card me-2 mb-2" id="chicken">
+                        <img src="../assets/images/Chicken-Category/Fried Chicken large.webp" alt="">
+                        <p>Chicken</p>
+                    </div>
+
+                    <div class="category-card me-2 mb-2" id="beverages">
+                        <img src="../assets/images/Bevarages-Category/Beverahes-category.webp" alt="">
+                        <p>Beverages</p>
+                    </div>
+
+                </div>
+                <div class="row" id="product-list">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="../js/app.js"></script>
+
+</body>
+
+</html>

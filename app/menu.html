@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOS Burgers-Menu</title>
+    <link rel="icon" href="../assets/images/favicon.png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div class="container ">
+        <header class="header d-flex flex-wrap justify-content-center py-3 mb-4 mt-3">
+            <a href="../index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
+                <span class="logo fw-bold fs-4">MOS Burgers</span>
+            </a>
+
+            <nav class="navbar d-flex">
+                <a href="../index.html" class="nav-link d-flex align-items-center me-4">
+                    <img src="../assets/icons/home.png" alt="Home" width="24" height="24" class="me-1">
+                    <span>Home</span>
+                </a>
+                <a href="menu.html" class="nav-link d-flex align-items-center me-4">
+                    <img src="../assets/icons/menu.png" alt="Menu" width="24" height="24" class="me-1">
+                    <span>Menu</span>
+                </a>
+                <a href="orders.html" class="nav-link d-flex align-items-center me-4">
+                    <img src="../assets/icons/order.png" alt="Orders" width="24" height="24" class="me-1">
+                    <span>Orders</span>
+                </a>
+                <a href="reports.html" class="nav-link d-flex align-items-center">
+                    <img src="../assets/icons/report.png" alt="Reports" width="24" height="24" class="me-1">
+                    <span>Reports</span>
+                </a>
+            </nav>
+        </header>
+        <!-- <h2 class="d-flex justify-content-center">Menu Page</h2>  -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalAddProduct" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabel">Add New Product</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <form id="productForm">
+
+                            <div class="form-outline mb-4">
+                                <div class="form-outline" data-mdb-input-init>
+                                    <label class="form-label" for="modalItemCode">Item Code</label>
+                                    <input type="text" id="modalItemCode" class="form-control" placeholder="B1001" />
+
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <div class="form-outline" data-mdb-input-init>
+                                        <label class="form-label" for="modalProductImage">Product Image</label>
+                                        <!-- <input type="file" id="modalProductImage" class="form-control" /> -->
+                                        <div class="image-upload">
+                                            <input type="file" id="modalProductImage" accept="image/*" required
+                                                onchange="previewImage(event)">
+                                            <!-- <div class="image-uploads">
+                                              <img src="../assets/icons/upload.svg" alt="img" />
+                                              <h4>Drag and drop a file to upload</h4>
+                                            </div> -->
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Text input -->
+                            <div class="form-outline mb-4" data-mdb-input-init>
+                                <label class="form-label" for="modalProductName">Product Name</label>
+                                <input type="text" id="modalProductName" class="form-control"
+                                    placeholder="Classic Burger" />
+
+                            </div>
+
+                            <!-- Select input -->
+                            <div class="form-outline mb-4" data-mdb-input-init>
+                                <label class="form-label" for="modalProductCategory">Product Category</label>
+                                <select id="modalProductCategory" class="form-control">
+                                    <option value="Option">Select Option</option>
+                                    <option value="Option">Burgers</option>
+                                    <option value="Option">Submarines</option>
+                                    <option value="Option">Pasta</option>
+                                    <option value="Option">Fries</option>
+                                    <option value="Option">Chicken</option>
+                                    <option value="Option">Bevarages</option>
+                                </select>
+
+                            </div>
+
+                            <!-- Price input -->
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <div class="form-outline mb-4" data-mdb-input-init>
+                                        <label class="form-label" for="modalPrice">Price LKR</label>
+                                        <input type="text" id="modalPrice" class="form-control" placeholder="1500.00" />
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-outline mb-4" data-mdb-input-init>
+                                        <label class="form-label" for="modalDiscount">Discount %</label>
+                                        <input type="text" id="modalDiscount" class="form-control" placeholder="10" />
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Additional Infomation input -->
+                            <div class="form-outline mb-4" data-mdb-input-init>
+                                <label class="form-label" for="modalAdditionalInfomation">Additional information</label>
+                                <textarea class="form-control" id="modalAdditionalInfomation" rows="4"
+                                    placeholder="Additional information"></textarea>
+
+                            </div>
+
+                            <!-- Submit button -->
+                            <div class="d-flex justify-content-end">
+                                <button type="reset" id="btnClear" class="btn btn-danger fw-bold me-2"
+                                    data-mdb-ripple-init>Clear</button>
+                                <button type="submit" id="btnAddProductSubmit"
+                                    class="btn btn-success fw-bold addButton"
+                                    data-mdb-ripple-init>Add Product</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Success Alert Modal -->
+        <div class="modal fade" id="successAlertModal" tabindex="-1" aria-labelledby="successAlertLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered"> 
+                <div class="modal-content">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title" id="successAlertLabel">Success!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center"> 
+                        The product has been added successfully!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Model to loadProduct -->
+        <div class="modal fade" id="modalViewProduct" tabindex="-1" aria-labelledby="modalViewProductLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalViewProductLabel">Product Details</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="text-center">
+                    <img id="viewProductImage" class="img-fluid mb-3" alt="Product Image">
+                  </div>
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      <strong>Item Code:</strong> <span id="viewItemCode"></span>
+                    </li>
+                    <li class="list-group-item">
+                      <strong>Name:</strong> <span id="viewProductName"></span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Category:</strong> <span id="viewProductCategory"></span>
+                      </li>
+                    <li class="list-group-item">
+                      <strong>Price:</strong> LKR <span id="viewProductPrice"></span>
+                    </li>
+                    <li class="list-group-item">
+                      <strong>Discount:</strong> <span id="viewProductDiscount"></span>%
+                    </li>
+                  </ul>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+        <div class="container mt-1">
+            <div class="row d-flex justify-content-between align-items-center mb-3">
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <h2 class="fw-bold display-7 m-3">Product List</h2>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 mb-sm-3 text-center">
+                    <input type="text" id="search-bar" placeholder="Search products..." oninput="searchProducts()" />
+                </div>
+
+                <div class="col-lg-3 col-md-12 col-sm-12 text-end">
+                    <button type="button" class="btn btn-primary fw-medium" id="btnAddNewProduct"
+                        onclick="showAddMenuItemModal()"> + Add New Product</button>
+                </div>
+
+
+            </div>
+            <!-- <div class="table-responsive">
+                <table class="table table-striped" id="tblMenu">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox"></th>
+                            <th>Item Code</th>
+                            <th >Product Name</th>
+                            <th>Category</th>
+                            <th>Price LKR</th>
+                            <th>Discount %</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>B1001</td>
+                            <td><img src="../assets/images/Burger-Category/Classic Burger (Large).webp" alt="Product Image" class="product-img"> Classic Chicken Burger (Large)</td>
+                            <td>Burger</td>
+                            <td>1500.00</td>
+                            <td>15</td>
+                            <td class="action-icons">
+                                <img src="../assets/icons/eye.svg" alt="" onclick="showAddMenuItemModal()">
+                                <img src="../assets/icons/edit.svg" alt="">
+                                <img src="../assets/icons/trash.svg" alt="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>B1002</td>
+                            <td><img src="../assets/images/Bevarages-Category/Coca-Cola (330ml).webp" alt="Product Image" class="product-img"> Coca Cola (330ml)</td>
+                            <td>Beverages</td>
+                            <td>1230.00</td>
+                            <td>-</td>
+                            
+                            <td class="action-icons">
+                                <img src="../assets/icons/eye.svg" alt="">
+                                <img src="../assets/icons/edit.svg" alt="">
+                                <img src="../assets/icons/trash.svg" alt="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>B1003</td>
+                            <td><img src="../assets/images/Pasta-Category/Chicken Cheese Pasta.jpg" alt="Product Image" class="product-img">Chicken Cheese Pasta</td>
+                            <td>Pasta</td>
+                            <td>1600.00</td>
+                            <td>12</td>
+                            <td class="action-icons">
+                                <img src="../assets/icons/eye.svg" alt="">
+                                <img src="../assets/icons/edit.svg" alt="">
+                                <img src="../assets/icons/trash.svg" alt="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>B1004</td>
+                            <td><img src="../assets/images/Submarine-Category/Crispy Chicken Submarine (Large).jpg" alt="Product Image" class="product-img">Crispy Chicken Submarine (Large)</td>
+                            <td>Submarine</td>
+                            <td>2000.00</td>
+                            <td>-</td>
+                            <td class="action-icons">
+                                <img src="../assets/icons/eye.svg" alt="">
+                                <img src="../assets/icons/edit.svg" alt="">
+                                <img src="../assets/icons/trash.svg" alt="">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> -->
+
+            <div class="row p-2 pt-0">
+                <!-- Left Panel -->
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <div class="d-flex flex-wrap mb-3 justify-content-around" id="category-list">
+                        <div class="category-card me-2 mb-2" id="burgers">
+                            <img src="../assets/images/burger.png" alt="">
+                            <p>Burgers</p>
+                        </div>
+                        <div class="category-card me-2 mb-2" id="pasta">
+                            <img src="../assets/images/Pasta-Category/categoryImage.png" alt="">
+                            <p>Pasta</p>
+                        </div>
+                        <div class="category-card me-2 mb-2" id="submarine">
+                            <img src="../assets/images/Submarine-Category/Double Cheese Chicken Submarine.webp" alt="">
+                            <p>Submarine</p>
+                        </div>
+                        <div class="category-card me-2 mb-2" id="fries">
+                            <img src="../assets/images/Fries-Category/Sweet Potato Fries.webp" alt="">
+                            <p>Fries</p>
+                        </div>
+                        <div class="category-card me-2 mb-2" id="chicken">
+                            <img src="../assets/images/Chicken-Category/Fried Chicken large.webp" alt="">
+                            <p>Chicken</p>
+                        </div>
+
+                        <div class="category-card me-2 mb-2" id="beverages">
+                            <img src="../assets/images/Bevarages-Category/Beverahes-category.webp" alt="">
+                            <p>Beverages</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right Panel -->
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <div class="row" id="product-list">
+                        <!-- Products will be displayed here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="../js/menu.js"></script>
+    <!-- <script src="../js/app.js"></script> -->
+</body>
+
+</html>

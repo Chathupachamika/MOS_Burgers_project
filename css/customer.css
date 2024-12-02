@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  --primary-font: "Inter", sans-serif;
+  --primary-color: #dc6b19;
+  --addButton-color: #03c90d;
+}
+
+body {
+  font-family: var(--primary-font);
+}
+
+#search-bar {
+  font-family: var(--primary-font);
+  width: 60%;
+  padding: 0.4rem;
+  border: 1.5px solid var(--primary-color);
+  border-radius: 10px;
+}
+
+#search-bar:focus {
+  width: 70%;
+  outline: none;
+}
+
+.btn-primary {
+  font-family: "Poppins", sans-serif !important;
+  padding: 10px !important;
+  background-color: var(--primary-color) !important;
+  border: var(--primary-color) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--addButton-color) !important;
+  border: var(--addButton-color) !important;
+}
+
+/* Customer Modal */
+.modal-title {
+  font-family: var(--secondary-font);
+  font-weight: bold;
+}
+
+#customerForm .form-label {
+  font-family: var(--primary-font);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+#customerForm .form-control {
+  font-family: var(--primary-font);
+  font-weight: 500;
+  font-size: 0.9rem;
+  border: var(--primary-color) solid 1px !important;
+}
+
+#customerForm #btnClear {
+  font-family: var(--primary-font);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+#customerForm .addButton {
+  font-family: var(--primary-font);
+  font-weight: 600;
+  font-size: 0.9rem;
+  background-color: var(--addButton-color) !important;
+  border: none !important;
+  border-radius: 5px !important;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.customer-card {
+  font-family: var(--primary-font);
+  font-weight: 500;
+  height: 21rem !important;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+}
+.customer-card img {
+  width: 180px;
+  height: 190px;
+  object-fit: cover;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 10px;
+}
+
+.customer-card .action-icons img {
+  height: 35px;
+  width: 25px;
+  margin-right: 10px;
+  border: none;
+}
+
+.card {
+  border-radius: 10px !important;
+  box-shadow: #bebebe 0px 0px 10px 0px !important;
+}
+
+.card-title {
+  font-family: var(--secondary-font);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.card-text {
+  font-family: var(--primary-font);
+  font-size: 1rem;
+  font-weight: 700;
+}

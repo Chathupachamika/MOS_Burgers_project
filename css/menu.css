@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+  --primary-font: "Inter", sans-serif;
+  --secondary-font: "Poppins", sans-serif;
+  --primary-color: #dc6b19;
+  --addButton-color: #03c90d;
+  --hover-color: #bebebe;
+}
+
+#search-bar {
+  font-family: "Poppins", sans-serif;
+  width: 60%;
+  padding: 0.6rem 2rem;
+  border: 1.5px solid var(--primary-color);
+  border-radius: 30px;
+  background: url('https://example.com/search-icon.svg') no-repeat 10px center;
+  background-size: 18px;
+  padding-left: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+#search-bar:focus {
+  width: 80%;
+  border-color: var(--addButton-color);
+  outline: none;
+  box-shadow: 0 0 8px var(--primary-color);
+}
+
+
+.product-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 5px;
+  border: var(--primary-color) solid 2px;
+  border-radius: 50px;
+  padding: 3px;
+}
+.card-body .action-icons img {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: none;
+}
+.card-body .action-icons img:hover {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+.btn-primary {
+  font-family: "Poppins", sans-serif !important;
+  padding: 10px !important;
+  background-color: var(--primary-color) !important;
+  border: var(--primary-color) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--addButton-color) !important;
+  border: var(--addButton-color) !important;
+}
+
+.modal-content {
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.95);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+
+.form-label {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+}
+
+.form-control {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  border: #dc6b19 solid 1px !important;
+}
+
+.addButton {
+  background-color: #03c90d !important;
+  border: none !important;
+  border-radius: 5px !important;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.image-upload {
+  border: 1px solid #dc6b19;
+  position: relative;
+  border-radius: 5px;
+}
+
+.category-card {
+  border: 1px solid var(--primary-color);
+  height: 100px;
+  width: 100px;
+  border-radius: 8px;
+  text-align: center;
+  font-family: var(--secondary-font);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 0 10px 0;
+  cursor: pointer;
+  margin: 5px;
+}
+.category-card:hover {
+  background-color: #bebebe;
+}
+.category-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 3px;
+}
+
+.product-card {
+  font-family: var(--primary-font);
+  font-weight: 500;
+  height: 22rem !important;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+}
+.product-card img {
+  width: 180px;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 1px solid #000000;
+}
+.product-price{
+  color: var(--primary-color);
+}
+.order-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+.order-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.card {
+  border-radius: 10px !important;
+  box-shadow: #bebebe 0px 0px 10px 0px !important;
+}
+
+.card-title{
+  font-family: var(--secondary-font);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.card-text{
+  font-family: var(--primary-font);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.active{
+  color: var(--primary-color) !important;
+}
+
+.modal-header.bg-success {
+  background-color: #28a745;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
+.modal-body {
+  font-size: 16px;
+}

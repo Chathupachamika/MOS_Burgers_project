@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root{
+  --primary-color: #dc6b19;
+  --btn-success-color: #03c90d;
+
+  --primary-font: 'Inter', sans-serif;
+  --secondary-font: 'Poppins', sans-serif;
+}
+body {
+  font-family: var(--primary-font);
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: var(--secondary-font);
+  font-weight: 600;
+}
+#search-bar{
+  font-family: var(--primary-font);
+  width: 90%;
+  padding: 0.4rem;
+  border: 1.5px solid var(--primary-color);
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+#search-bar:focus{
+  width: 100%;
+  outline: none;
+}
+
+#orderID {
+  font-family: var(--primary-font);
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-right: 10px;
+}
+
+#DateandTime {
+  font-family: var(--primary-font);
+  font-weight: 600;
+  color: black;
+  font-size: 1rem;
+  margin-right: 255px;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-family: var(--primary-font);
+  font-weight: 600;
+  margin-right: 1px;
+}
+
+.place-order-form .form-group input,
+.form-group select {
+  font-family: var(--primary-font);
+  border: 1.5px solid var(--primary-color);
+  margin-bottom: 10px;
+  padding: 10px;
+  margin: 3px;
+  border-radius: 15px;
+}
+
+.place-order-form .form-control{
+  font-family: var(--primary-font);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.place-order-form .prices-list .total-price{
+  font-family: var(--primary-font);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.place-order-form .prices-list p{
+  font-family: var(--primary-font);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.order-item p{
+  font-family: var(--primary-font);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.bi-person-fill-add {
+  color: var(--btn-success-color) !important;
+  border: var(--btn-success-color) solid 2px;
+  border-radius: 10px;
+}
+
+.spinner-border {
+  margin-top: 37px;
+  margin-left: 190px;
+}
+
+#btnAddCustomer {
+  background: none;
+  border: none;
+}
+
+/* Customer Modal */
+.modal-title {
+  font-family: var(--secondary-font);
+  font-weight: bold;
+}
+
+#customerForm .form-label {
+  font-family: var(--primary-font);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+#customerForm .form-control {
+  font-family: var(--primary-font);
+  font-weight: 500;
+  font-size: 0.9rem ;
+  border: var(--primary-color) solid 1px !important;
+
+}
+
+#customerForm #btnClear{
+  font-family: var(--primary-font);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+#customerForm .addButton {
+  font-family: var(--primary-font);
+  font-weight: 600;
+  font-size: 0.9rem;
+  background-color: var(--btn-success-color) !important;
+  border: none !important;
+  border-radius: 5px !important;  
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+
+/* Card Content */
+.cart-image {
+  margin: 10px 0 10px 0;
+  height: 55px;
+  width: 55px;
+}
+
+.cart-button {
+  background: none;
+  border: none;
+}
+
+.category-card {
+  border: 1px solid var(--primary-color);
+  height: 100px;
+  width: 100px;
+  border-radius: 8px;
+  text-align: center;
+  font-family: var(--secondary-font);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 0 10px 0;
+  cursor: pointer;
+  margin: 5px;
+}
+.category-card:hover {
+  background-color: #bebebe;
+}
+.category-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 3px;
+}
+.product-card {
+  font-family: var(--primary-font);
+  font-weight: 500;
+  height: 17rem !important;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+}
+.product-card img {
+  width: 180px;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 1px solid #000000;
+}
+.order-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+.order-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+.action-icons i {
+  cursor: pointer;
+}
+
+.card {
+  border-radius: 10px !important;
+  box-shadow: #bebebe 0px 0px 10px 0px !important;
+}
+
+.card-title{
+  font-family: var(--secondary-font);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.card-text{
+  font-family: var(--primary-font);
+  font-size: 1rem;
+  font-weight: 700;
+}
+span{
+  font-family: var(--secondary-font);
+}
+
+.implemented-future{
+  font-family: var(--primary-font);
+  font-weight: 600;
+  color: rgb(6, 131, 16);
+  margin-right: 255px;
+  margin-bottom: 20px;
+}
+
+.place-order-form .btnClear{
+  font-family: var(--primary-font);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.place-order-form .btnPlaceOrder{
+  font-family: var(--primary-font);
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: var(--btn-success-color) !important;
+  border: none !important;
+  border-radius: 5px !important;  
+}
+
+.btnPlaceOrder:hover{
+  background-color: #00ad09 !important;
+}
+
+.place-order-form .total-items{
+  font-family: var(--primary-font);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.place-order-form .total-items button{
+  font-family: var(--primary-font);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.btnDelete{
+  border: none !important;
+  background: none !important;
+  width: 0;
+  height: 0;
+  cursor: pointer;
+  background-color: white !important;
+}
+
+.btnDelete img{
+  width: 25px;
+  height: 25px;
+}
+
+.order-list{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: auto;
+  max-height: 300px;
+}
+
+.product-price{
+  color: var(--primary-color);
+}
