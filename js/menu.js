@@ -11,10 +11,8 @@ document
   .getElementById("btnAddNewProduct")
   .addEventListener("click", showAddMenuItemModal);
 
-//Currurent Category to load
 let currentCategory = "Burgers";
 
-//Render Product List
 function renderProductList(category) {
   currentCategory = category;
   const productListContainer = document.getElementById("product-list");

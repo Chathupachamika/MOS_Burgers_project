@@ -18,7 +18,6 @@
 </head>
 
 <body>
-    <!-- Navigation -->
     <div class="container ">
         <header class="header d-flex flex-wrap justify-content-center py-3 mb-4 mt-3">
             <a href="../index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
@@ -44,9 +43,6 @@
                 </a>
             </nav>
         </header>
-        <!-- <h2 class="d-flex justify-content-center">Menu Page</h2>  -->
-
-        <!-- Modal -->
         <div class="modal fade" id="modalAddProduct" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -68,29 +64,20 @@
                                 <div class="col">
                                     <div class="form-outline" data-mdb-input-init>
                                         <label class="form-label" for="modalProductImage">Product Image</label>
-                                        <!-- <input type="file" id="modalProductImage" class="form-control" /> -->
                                         <div class="image-upload">
                                             <input type="file" id="modalProductImage" accept="image/*" required
                                                 onchange="previewImage(event)">
-                                            <!-- <div class="image-uploads">
-                                              <img src="../assets/icons/upload.svg" alt="img" />
-                                              <h4>Drag and drop a file to upload</h4>
-                                            </div> -->
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Text input -->
                             <div class="form-outline mb-4" data-mdb-input-init>
                                 <label class="form-label" for="modalProductName">Product Name</label>
                                 <input type="text" id="modalProductName" class="form-control"
                                     placeholder="Classic Burger" />
 
                             </div>
-
-                            <!-- Select input -->
                             <div class="form-outline mb-4" data-mdb-input-init>
                                 <label class="form-label" for="modalProductCategory">Product Category</label>
                                 <select id="modalProductCategory" class="form-control">
@@ -104,8 +91,6 @@
                                 </select>
 
                             </div>
-
-                            <!-- Price input -->
                             <div class="row mb-4">
                                 <div class="col">
                                     <div class="form-outline mb-4" data-mdb-input-init>
@@ -121,18 +106,13 @@
 
                                     </div>
                                 </div>
-
                             </div>
-
-                            <!-- Additional Infomation input -->
                             <div class="form-outline mb-4" data-mdb-input-init>
                                 <label class="form-label" for="modalAdditionalInfomation">Additional information</label>
                                 <textarea class="form-control" id="modalAdditionalInfomation" rows="4"
                                     placeholder="Additional information"></textarea>
 
                             </div>
-
-                            <!-- Submit button -->
                             <div class="d-flex justify-content-end">
                                 <button type="reset" id="btnClear" class="btn btn-danger fw-bold me-2"
                                     data-mdb-ripple-init>Clear</button>
@@ -145,7 +125,6 @@
                 </div>
             </div>
         </div>
-        <!-- Success Alert Modal -->
         <div class="modal fade" id="successAlertModal" tabindex="-1" aria-labelledby="successAlertLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered"> 
@@ -160,8 +139,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Model to loadProduct -->
         <div class="modal fade" id="modalViewProduct" tabindex="-1" aria-labelledby="modalViewProductLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -212,82 +189,9 @@
                     <button type="button" class="btn btn-primary fw-medium" id="btnAddNewProduct"
                         onclick="showAddMenuItemModal()"> + Add New Product</button>
                 </div>
-
-
             </div>
-            <!-- <div class="table-responsive">
-                <table class="table table-striped" id="tblMenu">
-                    <thead>
-                        <tr>
-                            <th><input type="checkbox"></th>
-                            <th>Item Code</th>
-                            <th >Product Name</th>
-                            <th>Category</th>
-                            <th>Price LKR</th>
-                            <th>Discount %</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>B1001</td>
-                            <td><img src="../assets/images/Burger-Category/Classic Burger (Large).webp" alt="Product Image" class="product-img"> Classic Chicken Burger (Large)</td>
-                            <td>Burger</td>
-                            <td>1500.00</td>
-                            <td>15</td>
-                            <td class="action-icons">
-                                <img src="../assets/icons/eye.svg" alt="" onclick="showAddMenuItemModal()">
-                                <img src="../assets/icons/edit.svg" alt="">
-                                <img src="../assets/icons/trash.svg" alt="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>B1002</td>
-                            <td><img src="../assets/images/Bevarages-Category/Coca-Cola (330ml).webp" alt="Product Image" class="product-img"> Coca Cola (330ml)</td>
-                            <td>Beverages</td>
-                            <td>1230.00</td>
-                            <td>-</td>
-                            
-                            <td class="action-icons">
-                                <img src="../assets/icons/eye.svg" alt="">
-                                <img src="../assets/icons/edit.svg" alt="">
-                                <img src="../assets/icons/trash.svg" alt="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>B1003</td>
-                            <td><img src="../assets/images/Pasta-Category/Chicken Cheese Pasta.jpg" alt="Product Image" class="product-img">Chicken Cheese Pasta</td>
-                            <td>Pasta</td>
-                            <td>1600.00</td>
-                            <td>12</td>
-                            <td class="action-icons">
-                                <img src="../assets/icons/eye.svg" alt="">
-                                <img src="../assets/icons/edit.svg" alt="">
-                                <img src="../assets/icons/trash.svg" alt="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>B1004</td>
-                            <td><img src="../assets/images/Submarine-Category/Crispy Chicken Submarine (Large).jpg" alt="Product Image" class="product-img">Crispy Chicken Submarine (Large)</td>
-                            <td>Submarine</td>
-                            <td>2000.00</td>
-                            <td>-</td>
-                            <td class="action-icons">
-                                <img src="../assets/icons/eye.svg" alt="">
-                                <img src="../assets/icons/edit.svg" alt="">
-                                <img src="../assets/icons/trash.svg" alt="">
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div> -->
-
+        
             <div class="row p-2 pt-0">
-                <!-- Left Panel -->
                 <div class="col-lg-2 col-md-2 col-sm-2">
                     <div class="d-flex flex-wrap mb-3 justify-content-around" id="category-list">
                         <div class="category-card me-2 mb-2" id="burgers">
@@ -315,21 +219,17 @@
                             <img src="../assets/images/Bevarages-Category/Beverahes-category.webp" alt="">
                             <p>Beverages</p>
                         </div>
-
                     </div>
                 </div>
 
-                <!-- Right Panel -->
                 <div class="col-lg-10 col-md-10 col-sm-10">
                     <div class="row" id="product-list">
-                        <!-- Products will be displayed here -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script type="module" src="../js/menu.js"></script>
-    <!-- <script src="../js/app.js"></script> -->
 </body>
 
 </html>

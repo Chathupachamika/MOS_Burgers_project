@@ -66,7 +66,6 @@ import {
     return -1;
   }
   
-  //Search Products By Name
   function searchProducts() {
     const searchTerm = document.getElementById("search-bar").value.toLowerCase();
     const productListContainer = document.getElementById("product-list");
@@ -77,7 +76,6 @@ import {
         product.name.toLowerCase().includes(searchTerm)
       );
   
-      // Render the filtered products
       filteredProducts.forEach((product, index) => {
         const productCard = document.createElement("div");
         productCard.className = "col-md-4 mb-3";

@@ -35,7 +35,6 @@ body {
   border: var(--addButton-color) !important;
 }
 
-/* Customer Modal */
 .modal-title {
   font-family: var(--secondary-font);
   font-weight: bold;

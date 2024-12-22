@@ -72,7 +72,6 @@ window.onload = function () {
   renderOrderTable();
 };
 
-// Searching for specific data
 const search = document.getElementById("search-bar");
 search.addEventListener("input", searchTable);
 
@@ -169,7 +168,6 @@ pdf_btn.onclick = () => {
   toPDF(customers_table);
 };
 
-//Converting HTML table to EXCEL File
 
 const excel_btn = document.querySelector("#toEXCEL");
 
